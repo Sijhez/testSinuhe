@@ -1,7 +1,10 @@
 import React from 'react';
 
 const Footer = () => {
-  return <div>Este es el footer</div>;
+  return <>
+ <footer class="p-3 mb-2 bg-secondary text-white text-center">
+   Developed by Sinuhé Jardínez</footer>
+ </>;
 };
 
 export default Footer;

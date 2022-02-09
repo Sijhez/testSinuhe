@@ -22,15 +22,19 @@ function Clothes() {
            productos.map((producto, index)=>{
               return(
                   <>
-<div className='col-lg-4'>
+<div className='col-lg-4 text-center'>
 
-<div key={index} className="card" style={{width:'18rem'}}>
+<div key={index} className="card" style={{width:'100%'}}>
+<Link to= {`/productos/${producto.id}`}>
+<div className='photoContainer'>
   <img src={producto.image}
-  style={{width:'150px'}}
+  style={{width:'120px', height:'auto'}}
   className="card-img-top" alt={producto.title}/>
+</div>
+  </Link>
   <div className="card-body">
-    <h5 className="card-title">{producto.title}</h5>
-    <p className="card-text">{producto.price}</p>
+    <h5 className="card-title">$ {producto.price}</h5>
+    <p className="card-text">{producto.title}</p>
     <Link to= {`/productos/${producto.id}`}>
     <a href="#" className="btn btn-primary">
      Ver producto

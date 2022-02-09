@@ -2,9 +2,13 @@ import React from 'react';
 
 const Home = () => {
   return <>
-       <h1>
+       <div className='container'>
+        <div className='row'>
+         <h1>
            Bienvenido a la tienda
-       </h1>
+         </h1>
+         </div>
+       </div>
     </>;
 };
 

@@ -7,7 +7,37 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+footer{
+  position: relative;
+    width: 100%;
+    top: 100vh;
+}
+.photoContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:230px;
+}
+.productoInd{
+  padding: 5%;
+}
+.rating {
+  width: 180px;
+}
+
+.ratingStar {
+  cursor: pointer;
+  color: #dabd18b2;
+}
+.card{
+  height: 425px;
+  margin: 7px auto;
+}
+.card-text{
+  font-size: .8em;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
