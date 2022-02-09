@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import StoreContext from '../../../context/Store/StoreContext';
-import {useParams, Link} from 'react-router-dom'
+import {useParams} from 'react-router-dom'
 
 function UnProducto() {
   const productCtx = useContext(StoreContext)
