@@ -10,6 +10,8 @@ const reducer = (globalState, action)=>{
                 ...globalState,
                 unProducto:action.payload
             }
+   
+
         default:
             return globalState
    

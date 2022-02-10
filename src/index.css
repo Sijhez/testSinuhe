@@ -12,6 +12,25 @@ footer{
     width: 100%;
     top: 100vh;
 }
+.carousel-caption{
+    bottom: 45%;
+    background: #054c6196;
+    width: 100%;
+    height: 350px;
+    left: 0px;
+    animation: captionAnimation .5s linear;
+}
+
+@keyframes captionAnimation{
+  0%{
+    transform: translateY( 500px);
+  }
+  100%{
+    transform: translateY( 0px);
+  }
+}
+
+
 .photoContainer{
   display: flex;
   justify-content: center;
@@ -29,9 +48,14 @@ footer{
   cursor: pointer;
   color: #dabd18b2;
 }
+
 .card{
   height: 425px;
   margin: 7px auto;
+  transition: all .3s linear;
+}
+.card:hover{
+  box-shadow: 0px 10px 10px #c5c5c5;
 }
 .card-text{
   font-size: .8em;

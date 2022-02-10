@@ -1,5 +1,5 @@
 //imports
-import { useReducer } from "react";
+import {  useReducer } from "react";
 import StoreContext from "./StoreContext";
 import StoreReducer from "./StoreReducer"
 //importamos axios client para efectuar async-await y solicitar data a la API
@@ -24,6 +24,7 @@ const StoreState = (props)=>{
 
     //generamos peticion con axios a API para mostrar productos   
             const getProductos = async()=>{
+               
             const response = await axiosClient.get("/products")
             //generamos respuesta despues de realizada la consulta
             const productos = response.data
@@ -34,25 +35,32 @@ const StoreState = (props)=>{
                 payload:productos
             })
         }
-    //generamos peticion para conseguir un elemento seleccionado:
+
+       
+   
+ //generamos peticion para conseguir un elemento seleccionado:
+             //capturamos el ID del producto, cuando se ejecute con useEffect en el componente
            const getOneProducto = async(idProducto)=>{
+        //conseguido el id del producto, enviamos solicitud mediante axios client
            const response = await axiosClient.get(`/products/${idProducto}`)
-           const productoSeleccionado = response.data
+           const productoSeleccionado = response.data //extraemos la data de la respuesta de los datos obtenidos
            
            //genero dispatch para alterar el estadoGlobal
            dispatch({
                type:"GET_SINGLE",
-               payload:productoSeleccionado
+               payload:productoSeleccionado //especificar como cambiará el estado global a través del payload hacia el reducer
            })
 
            }
 
         return(
+    //con esto proveemos contexto al componente, con el context previamente importado
        <StoreContext.Provider
+       //invocamos los valores que estará recibiendo, y que se enviarán a reducer para alterar el estado global
        value={{
-           productos:globalState.productos,
+           productos:globalState.productos, //estados
            unProducto:globalState.unProducto,
-           getProductos,
+           getProductos, //alteradores mediante funciones async / await
            getOneProducto
        }}
        >
@@ -61,5 +69,5 @@ const StoreState = (props)=>{
        </StoreContext.Provider>
    )
 }
-
+//exportamos state
 export default StoreState

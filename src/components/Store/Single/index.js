@@ -8,7 +8,7 @@ import Stars from './Stars';
 function UnProducto() {
   const productCtx = useContext(StoreContext)
   const {getOneProducto, unProducto}=productCtx
-  const params = useParams()
+  const params = useParams() //uso useParams para capturar id de la busqueda ingresada
  const id = params.id
  
  
@@ -24,7 +24,7 @@ function UnProducto() {
       
       </div>
           <div className='col-lg-4'>
-            <img width='350px' src={unProducto.image}/>
+            <img alt={unProducto.title} width='350px' src={unProducto.image}/>
           {/* Recibo dato del rating para transmitirlo al component stars */}
           </div>
           <div className='col-lg-6'>
@@ -46,19 +46,21 @@ function UnProducto() {
       
      </div>   
 
-     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Debes iniciar sesion</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+     <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div className="modal-dialog">
+    <div className="modal-content">
+      <div className="modal-header">
+        <h5 className="modal-title" id="exampleModalLabel">Fake login</h5>
+        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-        ...
+      <div className="modal-body">
+       <p className='text-center'>
+       Debes iniciar sesion
+       </p>
       </div>
-      <div class="modal-footer">
+      <div className="modal-footer">
        
-        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Save changes</button>
+        <button type="button" className="btn btn-success" data-bs-dismiss="modal">Entendido</button>
       </div>
     </div>
   </div>

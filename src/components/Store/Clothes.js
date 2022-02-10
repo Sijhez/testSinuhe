@@ -7,7 +7,7 @@ function Clothes() {
     const ctx = useContext(StoreContext)
     const {productos, getProductos}= ctx
     useEffect(()=>{
-        getProductos()
+      getProductos()
     },[])
     
     
@@ -22,7 +22,7 @@ function Clothes() {
            productos.map((producto, index)=>{
               return(
                   <>
-<div className='col-lg-4 text-center'>
+<div key={index} className='col-lg-4 text-center'>
 
 <div key={index} className="card" style={{width:'100%'}}>
 <Link to= {`/productos/${producto.id}`}>
@@ -36,9 +36,9 @@ function Clothes() {
     <h5 className="card-title">$ {producto.price}</h5>
     <p className="card-text">{producto.title}</p>
     <Link to= {`/productos/${producto.id}`}>
-    <a href="#" className="btn btn-primary">
+    <button  className="btn btn-primary">
      Ver producto
-    </a>
+    </button>
         </Link>
   </div>
 </div>
